@@ -1,0 +1,56 @@
+<Panel>
+	<DockPanel>
+
+		<Text ux:Class="WhiteText" TextColor="#ffffff" />
+		
+		<JavaScript File="MainView.js" />
+
+			<Video Layer="Background" File="assets/video/jackson.mp4" IsLooping="true" AutoPlay="true" StretchMode="UniformToFill" ContentAlignment="Center" Opacity="0.5">
+			<Blur Radius="0" />
+			</Video>
+			
+		<Panel>
+			<Panel>
+				<WhileTrue Value="{showWebView}">
+					<NativeViewHost ux:Name="nvh" Background="#ddd">
+						<WebView ux:Name="webView" Url="{url}">
+							<PageLoaded>
+								<EvaluateJS Handler="{pageLoaded}">
+									return { url : document.location.href };
+								</EvaluateJS>
+							</PageLoaded>
+						</WebView>
+
+						<AddingAnimation>
+							<Change nvh.Opacity="0" Duration="0.3" />
+						</AddingAnimation>
+					</NativeViewHost>
+				</WhileTrue>
+			</Panel>
+
+			<!-- Logged In -->
+			<Panel>
+				<WhileTrue Value="{hasProfile}">
+					<NavigateTo Target="main"/>	
+				</WhileTrue>
+			</Panel>
+
+			<WhileFalse Value="{hasProfile}">
+				<Grid Rows="1*,1*">
+					<StackPanel Alignment="VerticalCenter">
+						<WhiteText Alignment="HorizontalCenter" FontSize="40">The Travel App</WhiteText>
+						<WhiteText Alignment="HorizontalCenter" Opacity=".5">Jackson TN</WhiteText>
+					</StackPanel>
+
+					<DockPanel Clicked="{login}" Height="60" Width="150" Padding="5,5,15,5"
+						   Alignment="Center">
+						<Rectangle Layer="Background" CornerRadius="4" Fill="#023668" />
+						<Image File="assets/img/FB-f-Logo__white_512.png" Dock="Left" Margin="8,8,10,8"/>
+						<Text Value="Login" Alignment="Center" Color="#fff" FontSize="20"/>
+					</DockPanel>
+				</Grid>
+			</WhileFalse>
+
+	</Panel>
+	</DockPanel>
+</Panel>

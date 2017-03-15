@@ -1,0 +1,15 @@
+<App>
+
+	<PageControl Interaction="None">
+
+		<!-- <Page ux:Name="login">
+			<ux:Include File="login.ux" />
+		</Page> -->
+
+		<Page ux:Name="main">
+			<ux:Include File="main.ux" />
+		</Page>
+
+	</PageControl>
+
+</App>

@@ -1,0 +1,21 @@
+{
+  "RootNamespace": "",
+  "Packages": [
+    "Fuse",
+    "Fuse.Maps",
+    "FuseJS",
+    "Fuse.Launcher"
+  ],
+  "Android": {
+   "Geo": {
+        "ApiKey": "AIzaSyDLCiv-YfHa-8jnljTXqbJRGLnItkQLrIk"
+    }
+},
+   "Mobile": {
+  	"Orientations": "Portrait"
+  },
+  "Includes": [
+    "*",
+    "Auth.js:Bundle"
+  ]
+}

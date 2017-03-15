@@ -1,0 +1,28 @@
+ [
+	{
+	"name":"Outback",
+	"food_type":"American",
+	"category":"restaurant",
+	"description":"Boisterous Australian-themed chain serving steaks, seafood & other hearty steakhouse fare.",
+	"location":[
+	  {
+	    "long":-88.820833,
+	    "lad":35.633056
+	  }
+	],
+	"img_hero":"http://t.com/hero.png"
+	},
+	{
+	"name":"Logans",
+	"food_type":"American",
+	"category":"restaurant",
+	"description":"Boisterous Australian-themed chain serving steaks, seafood & other hearty steakhouse fare.",
+	"location":[
+	  {
+	  	"lad":35.6614332,
+	    "long":-88.8500223
+	  }
+	],
+	"img_hero":"http://t.com/hero.png"
+	}
+]
