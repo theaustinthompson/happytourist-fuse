@@ -40,8 +40,8 @@
 					<StackPanel Alignment="Center" >
 						<Image File="assets/img/logo.png" Width="200" Padding="5,50,5,5" Alignment="Center"/>
 					</StackPanel>
-
-					<DockPanel Clicked="{main}" Height="60" Width="200" Alignment="Center">
+					<!-- hid FB logo -->
+					<DockPanel Clicked="{login}" Height="60" Width="200" Alignment="Center">
 						<Rectangle Layer="Background" CornerRadius="10" Fill="#023668" />
 						<!-- <Image File="assets/img/FB-f-Logo__white_512.png" Dock="Left" Margin="8,8,10,8"/> -->
 						<Text Value="let's explore" Alignment="Center" Color="#fff" FontSize="20"/>
