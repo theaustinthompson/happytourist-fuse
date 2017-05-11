@@ -2,12 +2,9 @@
 
 	<PageControl Interaction="None">
 
-		<!-- <Page ux:Name="login">
-			<ux:Include File="login.ux" />
-		</Page> -->
-
+		
 		<Page ux:Name="main">
-			<ux:Include File="main.ux" />
+			<ux:Include File="HomeView.ux" />
 		</Page>
 
 	</PageControl>

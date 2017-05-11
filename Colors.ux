@@ -1,19 +1,19 @@
 <Panel ux:Class="ColorPalette">
-	<float4 ux:Global="color0" ux:Value="#77A22F" />
-	<float4 ux:Global="color1" ux:Value="#023668" />
-	<float4 ux:Global="color2" ux:Value="#FFD700" />
-	<float4 ux:Global="color3" ux:Value="#00498F" />
+	<float4 ux:Global="color1" ux:Value="#77A22F" />
+	<float4 ux:Global="color2" ux:Value="#023668" />
+	<float4 ux:Global="color3" ux:Value="#FFD700" />
 	<float4 ux:Global="color4" ux:Value="#AA2B4A" />
+	<float4 ux:Global="color5" ux:Value="#00498F" />
 </Panel>
 
 <!--
 	Jackson Color Chart
 	
-	Color 0 Chamber Green #77A22F
-	Color 1 Chamber Blue #023668
-	Color 2 Hub City Gold #FFD700
-	Color 3 Lambuth Blue #00498F
-	Color 4 Union Red #AA2B4A
+	Color 0 Chamber Green #77A22F Home
+	Color 1 Chamber Blue  #023668 Dining
+	Color 2 Hub City Gold #FFD700 Shopping
+	Color 4 Union Red     #AA2B4A Nightlife
+	Color 3 Lambuth Blue  #00498F Hotels
 	
 
 	pallette URL https://coolors.co/77a22f-023668-ffd700-aa2b4a-00498f

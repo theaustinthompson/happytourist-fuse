@@ -5,7 +5,7 @@
 		
 		<JavaScript File="MainView.js" />
 
-			<Video Layer="Background" File="assets/video/jackson.mp4" IsLooping="true" AutoPlay="true" StretchMode="UniformToFill" ContentAlignment="Center" Opacity="0.5">
+			<Video Layer="Background" File="assets/vid/jackson.mp4" IsLooping="true" AutoPlay="true" StretchMode="UniformToFill" ContentAlignment="Center" Opacity=".5	">
 			<Blur Radius="0" />
 			</Video>
 			
@@ -37,16 +37,14 @@
 
 			<WhileFalse Value="{hasProfile}">
 				<Grid Rows="1*,1*">
-					<StackPanel Alignment="VerticalCenter">
-						<WhiteText Alignment="HorizontalCenter" FontSize="40">The Travel App</WhiteText>
-						<WhiteText Alignment="HorizontalCenter" Opacity=".5">Jackson TN</WhiteText>
+					<StackPanel Alignment="Center" >
+						<Image File="assets/img/logo.png" Width="200" Padding="5,50,5,5" Alignment="Center"/>
 					</StackPanel>
 
-					<DockPanel Clicked="{login}" Height="60" Width="150" Padding="5,5,15,5"
-						   Alignment="Center">
-						<Rectangle Layer="Background" CornerRadius="4" Fill="#023668" />
-						<Image File="assets/img/FB-f-Logo__white_512.png" Dock="Left" Margin="8,8,10,8"/>
-						<Text Value="Login" Alignment="Center" Color="#fff" FontSize="20"/>
+					<DockPanel Clicked="{main}" Height="60" Width="200" Alignment="Center">
+						<Rectangle Layer="Background" CornerRadius="10" Fill="#023668" />
+						<!-- <Image File="assets/img/FB-f-Logo__white_512.png" Dock="Left" Margin="8,8,10,8"/> -->
+						<Text Value="let's explore" Alignment="Center" Color="#fff" FontSize="20"/>
 					</DockPanel>
 				</Grid>
 			</WhileFalse>
