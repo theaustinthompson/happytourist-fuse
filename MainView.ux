@@ -2,7 +2,11 @@
 
 	<PageControl Interaction="None">
 
-		
+		<Page ux:Name="login" Opacity="1">
+			<ux:Include File="login.ux" />
+			<SolidColor />
+		</Page>
+
 		<Page ux:Name="main">
 			<ux:Include File="HomeView.ux" />
 		</Page>

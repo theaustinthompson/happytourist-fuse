@@ -1,54 +1,32 @@
 <Panel>
+
 	<DockPanel>
 
 		<Text ux:Class="WhiteText" TextColor="#ffffff" />
 		
-		<JavaScript File="MainView.js" />
-
 			<Video Layer="Background" File="assets/vid/jackson.mp4" IsLooping="true" AutoPlay="true" StretchMode="UniformToFill" ContentAlignment="Center" Opacity=".5	">
 			<Blur Radius="0" />
 			</Video>
 			
 		<Panel>
-			<Panel>
-				<WhileTrue Value="{showWebView}">
-					<NativeViewHost ux:Name="nvh" Background="#ddd">
-						<WebView ux:Name="webView" Url="{url}">
-							<PageLoaded>
-								<EvaluateJS Handler="{pageLoaded}">
-									return { url : document.location.href };
-								</EvaluateJS>
-							</PageLoaded>
-						</WebView>
+				
+			<Grid Rows="1*,1*">
+				
+				<StackPanel Alignment="Center" >
+					<Image File="assets/img/logo.png" Width="200" Padding="5,50,5,5" Alignment="Center"/>
+				</StackPanel>
+				
+				<DockPanel Height="60" Width="200" Alignment="Center">
+					
+					<Rectangle Layer="Background" CornerRadius="10" Fill="#023668" />	
+					<Text Value="let's explore" Alignment="Center" Color="#fff" FontSize="20"/>
+					<Clicked><NavigateTo Target="main" /></Clicked>
 
-						<AddingAnimation>
-							<Change nvh.Opacity="0" Duration="0.3" />
-						</AddingAnimation>
-					</NativeViewHost>
-				</WhileTrue>
-			</Panel>
-
-			<!-- Logged In -->
-			<Panel>
-				<WhileTrue Value="{hasProfile}">
-					<NavigateTo Target="main"/>	
-				</WhileTrue>
-			</Panel>
-
-			<WhileFalse Value="{hasProfile}">
-				<Grid Rows="1*,1*">
-					<StackPanel Alignment="Center" >
-						<Image File="assets/img/logo.png" Width="200" Padding="5,50,5,5" Alignment="Center"/>
-					</StackPanel>
-					<!-- hid FB logo -->
-					<DockPanel Clicked="{login}" Height="60" Width="200" Alignment="Center">
-						<Rectangle Layer="Background" CornerRadius="10" Fill="#023668" />
-						<!-- <Image File="assets/img/FB-f-Logo__white_512.png" Dock="Left" Margin="8,8,10,8"/> -->
-						<Text Value="let's explore" Alignment="Center" Color="#fff" FontSize="20"/>
-					</DockPanel>
-				</Grid>
-			</WhileFalse>
-
-	</Panel>
+				</DockPanel>
+			</Grid>
+				
+		</Panel>
+	
 	</DockPanel>
+
 </Panel>

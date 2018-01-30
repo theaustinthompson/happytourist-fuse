@@ -1,12 +1,10 @@
 <ClientPanel>
 
 	<Grid Columns="auto,1*,auto" Height="50" Dock="Top" Margin="5">
-		<Grid Width="25" Height="25" >
-			<Image File="assets/img/tourist.png"/>
+		<Grid>
+			<Image File="assets/img/logo.png" Alignment="VerticalCenter"/>
 		</Grid>
-			<Text ux:Name="titleText" Value="The Happy Tourist" Color="color1" FontSize="25" Alignment="Center">
-				<Font File="Assets/fonts/Roboto-Black.ttf" />
-			</Text>
+
 		</Grid>
 
 		<Panel Dock="Top" Height="60" >
@@ -38,8 +36,7 @@
 
 					<Panel HitTestMode="LocalBounds">
 						<Grid Columns="auto,1*" Margin="30,0" Alignment="Left">
-							<TabIcon File="Assets/img/dining.png" Color="color2" />
-							
+							<TabIcon File="Assets/img/dining.png" Color="color2" />		
 						</Grid>
 						<Clicked>
 							<Set nav.Active="eat" />
@@ -83,11 +80,6 @@
 			<PageControl ux:Name="nav" Active="home" Interaction="None">
 				
 			
-				<Rectangle ux:Name="bgColor" Layer="Background" Color="color4" Opacity="0.12"/>
-				
-				<Attractor ux:Name="titleTextAttractor" Target="titleText.Color" Value="color2" />
-
-				<Image ux:Class="PagePlaceholder" Margin="8,10,8,0" StretchMode="UniformToFill" ContentAlignment="Top"/>
 
 				<Page ux:Name="home">
 
@@ -134,68 +126,34 @@
 				
 				</Page>
 
-				<Page ux:Name="eat">
+					<Page ux:Name="eat">
 
-	 <JavaScript>
-	    var Observable = require("FuseJS/Observable");
-
-	    var data =  [
-			{
-			"name":"Outback",
-			"food_type":"American",
-			"category":"restaurant",
-			"description":"Boisterous Australian-themed chain serving steaks, seafood & other hearty steakhouse fare.",
-			"location":[
-			  {
-			    "long":-88.820833,
-			    "lad":35.633056
-			  }
-			],
-			"img_hero":"http://t.com/hero.png"
-			},
-			{
-			"name":"Logan's",
-			"food_type":"American",
-			"category":"restaurant",
-			"description":"Boisterous Australian-themed chain serving steaks, seafood & other hearty steakhouse fare.",
-			"location":[
-			  {
-			  	"lad":35.6614332,
-			    "long":-88.8500223
-			  }
-			],
-			"img_hero":"http://t.com/hero.png"
-			}
-		];
-
-		var businesses = [];
-		data.forEach(function(location) {
-			businesses.push({
-				"latitude":location.location[0].lad, 
-				"longitude":location.location[0].long, 
-				"label":location.name
-			});
-		});
-
-	    exports.markers = businesses;
-
-	    exports.onMarkerTapped = function(args)
-	    {
-	        console.log("Marker press: "+args.label);
-	    }
-	</JavaScript>
-
-	<NativeViewHost>
-	    <MapView Zoom="10" Longitude="-88.820833" Latitude="35.633056"  ShowMyLocation="true" MarkerTapped={onMarkerTapped} >
-	        <Each Items={markers}>
-	            <MapMarker Latitude="{latitude}" Longitude="{longitude}" Label="{label}" />
-	        </Each>
-	       
-	    </MapView>
-	</NativeViewHost>		
-
+					<Image Layer="Background" File="Assets/img/dining_bg.jpg" StretchMode="UniformToFill" ContentAlignment="Center" Opacity=".6" />
+					
+					<Grid Rows="1*,1*">
 				
-				</Page>
+					<DockPanel Height="60" Width="200" Alignment="Center">
+					<Rectangle Layer="Background" CornerRadius="10" Fill="#023668" />	
+					<Text Value="Food Near Me" Alignment="Center" Color="#fff" FontSize="20"/>
+					<Clicked><NavigateTo Target="eat_radius" /></Clicked>
+					</DockPanel>
+				
+					<DockPanel Height="60" Width="200" Alignment="Center">
+					<Rectangle Layer="Background" CornerRadius="10" Fill="#023668" />	
+					<Text Value="Food By Category" Alignment="Center" Color="#fff" FontSize="20"/>
+					<Clicked><NavigateTo Target="eat_category" /></Clicked>
+					</DockPanel>
+		
+					</Grid>
+					</Page>
+
+					<Page ux:Name="eat_radius">
+						<Text Value="radius page"/>
+					</Page>
+
+					<Page ux:Name="eat_category">
+						<Text Value="Category Page" />	
+					</Page>
 
 				<Page ux:Name="bemerry">
 					 <JavaScript>
